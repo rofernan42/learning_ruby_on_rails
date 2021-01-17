@@ -1,0 +1,32 @@
+---
+fr:
+  books:
+    created: Livre cree
+    destroy: Livre supprime
+    edit:
+      title: Editer le livre
+    index:
+      book_author: Auteur
+      book_summary: Resume
+      book_title: Titre
+      delete_book: Supprimer
+      edit_book: Editer
+      new_book: "+ Ajouter un livre"
+      show_book: Voir
+      title: Tous les livres
+    new:
+      title: Creer un nouveau livre
+    update: Livre edite
+  helpers:
+    books:
+      written_by: ecrit par %{editor_name}
+  home:
+    index:
+      welcome: Salut le monde !
+  views:
+    pagination:
+      first: "&laquo; Premiere"
+      last: Derniere &raquo;
+      next: Suiv &rsaquo;
+      previous: "&lsaquo; Prec"
+      truncate: "&hellip;"

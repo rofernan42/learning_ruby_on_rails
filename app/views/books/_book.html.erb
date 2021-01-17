@@ -1,0 +1,8 @@
+<tr id="book_<%= book.id %>">
+    <td><%= book.title %></td>
+    <td><%= book.author %></td>
+    <td><%= summary(book) %></td> <!-- voir app/helpers/books_helper.rb -->
+    <td><%= link_to I18n.t("books.index.show_book"), book_path(book) %></td>
+    <td><%= link_to I18n.t("books.index.edit_book"), edit_book_path(book) %></td>
+    <td><%= link_to I18n.t("books.index.delete_book"), book_path(book), method: :delete, remote: true, data: { confirm: "Are you sure ?" } %></td>
+</tr>

@@ -1,0 +1,18 @@
+$body-bg: #fdf5ef;
+@import "bootstrap";
+@import "**/*";
+// @import "bootstrap-custom";
+
+.field_with_errors {
+    color: red;
+}
+
+.notice {
+    color: green;
+    font-style: italic;
+}
+
+.alert {
+    color: orange;
+    font-style: italic;
+}

@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th><%= I18n.t("books.index.book_title") %></th>
+        <th><%= I18n.t("books.index.book_author") %></th>
+        <th><%= I18n.t("books.index.book_summary") %></th>
+        <th></th>
+    </tr>
+    <%= render @books.order(:title) %>
+    <!-- equivaut a faire:
+        @books.order(:title).each do |book|
+            render "book", book: book
+        end
+    -->
+</table>
+
+<%= paginate @books, remote: true %>

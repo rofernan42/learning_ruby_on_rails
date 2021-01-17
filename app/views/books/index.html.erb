@@ -1,0 +1,7 @@
+<h1><%= I18n.t("books.index.title") %></h1>
+
+<div id="books">
+    <%= render "books" %>
+</div>
+
+<%= link_to I18n.t("books.index.new_book"), new_book_path %>
