@@ -73,4 +73,22 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Logs
+  config.log_level = :debug
+  config.log_formatter = ActiveSupport::Logger::Formatter.new
+  config.logger = ActiveSupport::Logger.new(STDOUT)
+  config.logger.formatter = config.log_formatter
+
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+
+  config.action_mailer.smtp_settings = {
+    user_name: "username",
+    password: "password",
+    domain: "booksodb.org",
+    address: "smtp.domain.com",
+    port: 587,
+    authentification: :plain,
+    enable_starttls_auto: true
+  }
 end

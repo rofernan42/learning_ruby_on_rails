@@ -1,7 +1,7 @@
 <%= form_with model: @book, local: true do |form| %>
 <% if @book.errors.any? %>
     <h2>
-        <%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:
+        <%= pluralize(@book.errors.count, I18n.t("books.errors.err")) %><%= I18n.t("books.errors.message") %>
     </h2>
     <ul>
         <% @book.errors.full_messages.each do |msg| %>

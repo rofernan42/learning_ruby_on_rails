@@ -5,6 +5,9 @@ en:
     destroy: Book deleted
     edit:
       title: Edit book
+    errors:
+      err: error
+      message: " prohibited this book from being saved:"
     index:
       book_author: Author
       book_summary: Summary

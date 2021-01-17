@@ -5,6 +5,8 @@ class Book < ApplicationRecord
     before_validation :set_slug, if: :should_set_slug? # voir Callbacks
     # le slug est utilise pour pouvoir aller sur la page d'un livre en faisant l'url /books/titre-du-livre
 
+    after_update :notify_admin
+
     private
     def should_set_slug?
         title.present? && (slug.blank? || title_changed?) # methode avec '_' -> voir methode 'dirty'
@@ -22,5 +24,10 @@ class Book < ApplicationRecord
             # ~ tant qu'il existe avec ce slug on incremente le compteur et on cree un nouveau slug avec le compteur au bout
             # utilise pour le cas ou plusieurs livres ont le meme titre
         end
+    end
+
+    def notify_admin
+        AdminMailer.with(book: self).book_updated.deliver_later
+        # deliver_later permet d'envoyer l'email en asynchrone. C'est mieux pour eviter d'etr dependant du temps de reponse du serveur smtp
     end
 end

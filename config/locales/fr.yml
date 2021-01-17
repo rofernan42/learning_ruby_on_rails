@@ -1,10 +1,26 @@
 ---
 fr:
+  activerecord:
+    errors:
+      models:
+        book:
+          attributes:
+            title:
+              blank: ne peut etre vide
+            author:
+              blank: ne peut etre vide
+            slug:
+              blank: ne peut etre vide
+            pages_count:
+              greater_than: ne peut etre negatif
   books:
     created: Livre cree
     destroy: Livre supprime
     edit:
       title: Editer le livre
+    errors:
+      err: erreur
+      message: " empechent la sauvegarde du livre:"
     index:
       book_author: Auteur
       book_summary: Resume

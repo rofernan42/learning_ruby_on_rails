@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
   let(:book) { FactoryBot.build(:book) }
-  let(:name) { "book"}
+  let(:name) { "book" }
 
   it "can be instanciated" do
     expect(book).not_to be nil

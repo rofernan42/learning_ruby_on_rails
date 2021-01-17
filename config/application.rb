@@ -18,5 +18,8 @@ module BooksOdb
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.action_mailer.default_url_options = { host: "booksodb.org" }
+    config.active_job.queue_adapter = :sidekiq
   end
 end
