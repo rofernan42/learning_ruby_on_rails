@@ -45,7 +45,14 @@ class BooksController < ApplicationController
     end
 
     def find_book # va s'executer avant show edit update et destroy ; effectue la lecture d'une ressource de type Book
-        @book = Book.find(params[:id])
+        # avant callbacks:
+        # @book = Book.find(params[:id])
+        # apres callbacks:
+        @book = Book.find_by_id(params[:identifier])
+        # = Book.where(id: params[:identifier]).first
+        @book ||= Book.find_by_slug(params[:identifier])
+        raise ActionController::RoutingError.new("Not found") unless @book
+        # unless @book = if @book.nil?
     end
 
     def store_editor_name # va s'executer avant create et update ; permet de preremplir le champ "editor name" avec le dernier qui a ete precise
