@@ -1,5 +1,6 @@
 # parent de tous les controllers de l'application
 class ApplicationController < ActionController::Base
+    include ActionController::MimeResponds
     before_action :set_locale # set_locale va etre executee avant chaque action de chaque controller
 
     def default_url_options # donne les parametres par defaut a passer dans l'url

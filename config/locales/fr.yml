@@ -2,17 +2,19 @@
 fr:
   activerecord:
     errors:
+      messages:
+        record_invalid: ''
       models:
         book:
           attributes:
-            title:
-              blank: ne peut etre vide
             author:
-              blank: ne peut etre vide
-            slug:
               blank: ne peut etre vide
             pages_count:
               greater_than: ne peut etre negatif
+            slug:
+              blank: ne peut etre vide
+            title:
+              blank: ne peut etre vide
   books:
     created: Livre cree
     destroy: Livre supprime
@@ -33,6 +35,9 @@ fr:
     new:
       title: Creer un nouveau livre
     update: Livre edite
+  comments:
+    errors:
+      message: " empechent la sauvegarde du commentaire:"
   helpers:
     books:
       written_by: ecrit par %{editor_name}

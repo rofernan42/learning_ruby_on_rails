@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   require "sidekiq/web"
   mount Sidekiq::Web => "/sidekiq"
 
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   # delete "/books/:id", to: "books#desstroy"
 
   # apres callbacks:
-  resources :books, only: [:index, :show, :new, :edit, :create, :update, :destroy], param: :identifier
+  resources :books, only: [:index, :show, :new, :edit, :create, :update, :destroy], param: :identifier do
+    resources :comments, only: :create
+  end
   # l'url sera a present du type /books/:identifier (identifier est un terme plus generique qui peut referer au :id (qui est un int) ou au slug (qui est une string))
 end

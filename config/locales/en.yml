@@ -20,6 +20,9 @@ en:
     new:
       title: Create a new book
     update: Book updated
+  comments:
+    errors:
+      message: " prohibited this comment from being saved:"
   helpers:
     books:
       written_by: written by %{editor_name}
