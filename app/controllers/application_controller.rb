@@ -1,10 +1,16 @@
 # parent de tous les controllers de l'application
 class ApplicationController < ActionController::Base
-    include ActionController::MimeResponds
+    before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :set_locale # set_locale va etre executee avant chaque action de chaque controller
 
     def default_url_options # donne les parametres par defaut a passer dans l'url
         { locale: I18n.locale } # permet de maintenir la locale courante (laisser le site en francais s'il a utilise le bouton de langue)
+    end
+
+    protected
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:first_name])
     end
 
     private

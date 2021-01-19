@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Manage localizations
 gem 'i18n-tasks', '~> 0.9.33'
 
+# Localize translation errors
+gem 'rails-i18n'
+
 # Manage pagination -> https://github.com/kaminari/kaminari for usage
 gem 'kaminari'
 
@@ -46,6 +49,7 @@ gem 'sidekiq'
 
 # Authentification (users)
 gem 'devise'
+gem 'devise-i18n' # pour les traductions
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

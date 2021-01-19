@@ -1,0 +1,42 @@
+Ouvrir la console rails:
+rail console
+
+Voir tous les chemins possibles:
+rails routes
+
+Migrer une database (voir db/migrate):
+rails db:migrate
+rails db:rollback
+
+Apres avoir ajoute une gem dans le Gemfile:
+sudo bundle install
+pour prendre les changements en compte
+
+Creer une task (voir lib/tasks):
+rails generate task books populate_slug
+
+Creer un modele (ex pour des commentaires):
+rails generate model Comment book:references description:string first_name:string score:integer
+
+Executer une task:
+(ex:) rails books:populate_slug (voir lib/tasks/books.rake)
+
+Rakefile est l'equivalent d'un Makefile pour Rails.
+
+Creer un executable qui peut etre lance en ligne de commande (place dans bin/):
+bundle binstubs *name*
+(ex : bundle binstubs I18n-tasks)
+
+Pour gerer les locales:
+gem I18n-tasks
+commandes:
+i18n-tasks add-missing
+i18n-tasks normalize
+i18n-tasks remove-unused
+
+rails generate sidekiq:worker hello
+
+Perform taches asynchrones:
+ouvrir 2 terminaux ; un avec rails console (faire spring stop au prealable)
+l'autre avec sidekiq ;
+exemple: HelloWorker.perform_async("Romain") (voir app/workers/hello_workers.rb)

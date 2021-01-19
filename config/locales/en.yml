@@ -19,16 +19,26 @@ en:
       title: All the books
     new:
       title: Create a new book
+    not_owner: "Oops! It looks that you are not the owner of this book"
     update: Book updated
   comments:
     errors:
       message: " prohibited this comment from being saved:"
+  errors:
+    messages:
+      not_saved: Not saved
   helpers:
     books:
       written_by: written by %{editor_name}
   home:
     index:
       welcome: Hellurrrr wurrrld !
+  nav:
+    account: Account
+    home: Home
+    logout: Log out
+    signin: Sign in
+    signup: Sign up
   views:
     pagination:
       first: "&laquo; First"

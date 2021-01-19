@@ -1,20 +1,5 @@
 ---
 fr:
-  activerecord:
-    errors:
-      messages:
-        record_invalid: ''
-      models:
-        book:
-          attributes:
-            author:
-              blank: ne peut etre vide
-            pages_count:
-              greater_than: ne peut etre negatif
-            slug:
-              blank: ne peut etre vide
-            title:
-              blank: ne peut etre vide
   books:
     created: Livre cree
     destroy: Livre supprime
@@ -34,16 +19,26 @@ fr:
       title: Tous les livres
     new:
       title: Creer un nouveau livre
+    not_owner: "Oups ! Il semble que vous n'etes pas le proprietaire de ce livre"
     update: Livre edite
   comments:
     errors:
       message: " empechent la sauvegarde du commentaire:"
+  errors:
+    messages:
+      not_saved: Not saved
   helpers:
     books:
       written_by: ecrit par %{editor_name}
   home:
     index:
       welcome: Salut le monde !
+  nav:
+    account: Compte
+    home: Accueil
+    logout: Deconnexion
+    signin: Connexion
+    signup: S'inscrire
   views:
     pagination:
       first: "&laquo; Premiere"

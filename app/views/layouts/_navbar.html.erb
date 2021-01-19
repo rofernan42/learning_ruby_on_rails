@@ -1,0 +1,15 @@
+<nav class="navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-nav">
+        <%= link_to I18n.t("nav.home"), root_path, class: "navbar-brand" %>
+        <%= link_to image_tag("flag_en.png", alt: "EN", class: "locale-flag"), url_for(only_path: true, locale: "en"), class: "nav-item nav-link" %>
+        <%= link_to image_tag("flag_fr.png", alt: "FR", class: "locale-flag"), url_for(only_path: true, locale: "fr"), class: "nav-item nav-link" %>
+        <%= link_to I18n.t("books.index.title"), books_path, class: "nav-item nav-link" %>
+        <% if user_signed_in? %>
+            <%= link_to I18n.t("nav.account"), edit_user_registration_path, class: "nav-item nav-link" %>
+            <%= link_to I18n.t("nav.logout"), destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
+        <% else %>
+            <%= link_to I18n.t("nav.signin"), new_user_session_path, class: "nav-item nav-link" %>
+            <%= link_to I18n.t("nav.signup"), new_user_registration_path, class: "nav-item nav-link" %>
+        <% end %>
+    </div>
+</nav>

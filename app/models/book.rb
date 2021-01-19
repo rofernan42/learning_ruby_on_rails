@@ -2,6 +2,7 @@ class Book < ApplicationRecord
     # associations
     has_many :comments, dependent: :destroy # supprime les commentaires lies lorsque le livre est detruit
     # par ex dans la console si on fait book.comments, ca va appeler la methode has_many
+    belongs_to :user
 
     validates :title, :author, :slug, presence: true
     validates :pages_count, numericality: { only_integer: true, greater_than: 0 }, allow_blank: true
